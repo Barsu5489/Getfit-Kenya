@@ -1,0 +1,166 @@
+<%- include('partials/header') %>
+
+    <main class="meal-point" >
+
+        <%- include('partials/nav') %>
+        <div class="macros-point">
+
+        
+            <div onclick="display()">
+            
+                <h3>Balanced Diet Plan </h3><br>
+                <p>Carbohydrates: <%=userMacros.balancedDietPlan.carb%></p>
+                <p>Proteins: <%=userMacros.balancedDietPlan.protein%></p>
+                <p>Fat: <%=userMacros.balancedDietPlan.fat%></p>
+                <p>Sugar: <%=userMacros.balancedDietPlan.sugar%></p>
+            </div>
+        
+            <div onclick="display()">
+                <h3>Low Carbohydrates <br> Diet Plan <br></h3>
+                <p>Carbohydrates: <%=userMacros.lowCarbDietPlan.carb%></p>
+                <p>Proteins: <%=userMacros.lowCarbDietPlan.protein%></p>
+                <p>Fat: <%=userMacros.lowCarbDietPlan.fat%></p>
+                <p>Sugar: <%=userMacros.lowCarbDietPlan.sugar%></p>
+            </div>
+        
+            <div onclick="display()">
+                <h3>High Protein Diet <br> Plan </h3><br>
+                <p>Carbohydrates: <%=userMacros.highProteinDietPlan.carb%></p>
+                <p>Proteins: <%=userMacros.highProteinDietPlan.protein%></p>
+                <p>Fat: <%=userMacros.highProteinDietPlan.fat%></p>
+                <p>Sugar: <%=userMacros.highProteinDietPlan.sugar%></p>
+            </div>
+        
+            <div onclick="display()">
+                <h3>Low Fat Diet Plan </h3><br>
+                <p>Carbohydrates: <%=userMacros.lowFatDietPlan.carb%></p>
+                <p>Proteins: <%=userMacros.lowFatDietPlan.protein%></p>
+                <p>Fat: <%=userMacros.lowFatDietPlan.fat%></p>
+                <p>Sugar: <%=userMacros.lowFatDietPlan.sugar%></p>
+            </div>
+        
+            <div onclick="display()">
+                <h3>Low Sugar Diet Plan</h3><br>
+                <p>Carbohydrates: <%=userMacros.lowSugarDietPlan.carb%></p>
+                <p>Proteins: <%=userMacros.lowSugarDietPlan.protein%></p>
+                <p>Fat: <%=userMacros.lowSugarDietPlan.fat%></p>
+                <p>Sugar: <%=userMacros.lowSugarDietPlan.sugar%></p>
+            </div>
+        </div>
+            <div class="tbl-container" id="mac-div" >
+                <h2></h2>
+                <a href="/add-meal" class="btn btn-sm btn-primary" id="add-meal-link">Create your Own plan</a><br/><br/>
+                <table class="table table-dark table-striped">
+                  <thead>
+                    <tr>
+                      <th>Carbohydrates</th>
+                      <th>Proteins</th>
+                      <th>Fat </th>
+                      <th>Sugar</th>
+                      <th>Update</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                      <% meal.forEach(function(meal){ %>
+                          <tr>
+                              <td><%= meal.carbohydrate %></td>
+                              <td><%= meal.protein %></td>
+                              <td><%= meal.fat %></td>
+                              <td><%= meal.sugar %></td>
+                              <td>
+                                  <a href="edit/<%= meal.id %>" id="eNd1" style="color: beige;" onclick="edit()">Edit</a>
+                                  <a href="delete/<%= meal.id %>" id="eNd2" style="color: beige;"onclick="deleteBtn()">Delete</a>
+                              </td>
+                          </tr>
+                      <% }); %>
+                  </tbody>
+                </table>
+              </div>
+              <!-- <div class="tbl-container" id="mac-div2" style="display: none;">
+                <h2></h2>
+                <a href="/add-meal" class="btn btn-sm btn-primary" id="add-meal-link">Create your Own plan</a><br/><br/>
+                <table class="table table-dark table-striped">
+                  <thead>
+                    <tr>
+                      <th>Carbohydrates</th>
+                      <th>Proteins</th>
+                      <th>Fat </th>
+                      <th>Sugar</th>
+                      <th>Update</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                      <% meal.forEach(function(meal){ %>
+                          <tr>
+                              <td><%= meal.carbohydrate %></td>
+                              <td><%= meal.protein %></td>
+                              <td><%= meal.fat %></td>
+                              <td><%= meal.sugar %></td>
+                              <td>
+                                  <a href="edit/<%= meal.id %>" id="eNd1" style="color: beige;">Edit</a>
+                                  <a href="delete/<%= meal.id %>" id="eNd2" style="color: beige;">Delete</a>
+                              </td>
+                          </tr>
+                      <% }); %>
+                  </tbody>
+                </table>
+              </div> -->
+              <!-- <div class="tbl-container" id="mac-div2" style="display: none;">
+                <h2></h2>
+                <a href="/add-meal" class="btn btn-sm btn-primary" id="add-meal-link">Create your Own plan</a><br/><br/>
+                <table class="table table-dark table-striped">
+                  <thead>
+                    <tr>
+                      <th>Carbohydrates</th>
+                      <th>Proteins</th>
+                      <th>Fat </th>
+                      <th>Sugar</th>
+                      <th>Update</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                      <% meal.forEach(function(meal){ %>
+                          <tr>
+                              <td><%= meal.carbohydrate %></td>
+                              <td><%= meal.protein %></td>
+                              <td><%= meal.fat %></td>
+                              <td><%= meal.sugar %></td>
+                              <td>
+                                  <a href="edit/<%= meal.id %>" id="eNd1" style="color: beige;">Edit</a>
+                                  <a href="delete/<%= meal.id %>" id="eNd2" style="color: beige;">Delete</a>
+                              </td>
+                          </tr>
+                      <% }); %>
+                  </tbody>
+                </table>
+              </div> -->
+              
+              
+              <script>
+                  let editBtn = document.getElementById('eNd1')
+                  let macDiv = document.getElementById('eNd1')
+
+                  function edit(){
+                    const editBtn = confirm('Are you sure you want to edit');
+  if (editBtn) {
+    window.location = '../edit-meal';
+  } else {
+  
+  }
+
+                  }
+                  function deleteBtn(){
+                    const deleteBtn = confirm('Are you sure you want to delete');
+  if (deleteBtn) {
+    window.location = '../meal';
+  } else {
+    
+  }
+
+                  }
+
+              </script>
+
+    </main>
+
+<%- include('partials/footer') %>

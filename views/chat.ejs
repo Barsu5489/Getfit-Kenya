@@ -1,0 +1,40 @@
+
+
+<%- include('partials/header') %>
+<div class="join-chatting">
+<%- include('partials/nav') %>
+<main id="chatt">
+
+<div class="chat-container">
+    <header class="chat-header">
+      <h1> ChatRoom</h1>
+      <a id="leave-btn" class="btn">Leave Room</a>
+    </header>
+    <main class="chat-main">
+      <div class="chat-sidebar">
+        <h3>Room Name:</h3>
+        <h2 id="room-name"></h2>
+        <h3>Users online</h3>
+        <ul id="users"></ul>
+      </div>
+      <div class="chat-messages"></div>
+    </main>
+    <div class="chat-form-container">
+      <form id="chat-form">
+        <input
+          id="msg"
+          type="text"
+          placeholder="Enter Message"
+          required
+          autocomplete="off"
+        />
+        <button class="btn" style="margin-left: 10px;margin-right: 0;"></i> Send</button>
+      </form>
+    </div>
+  </div>
+</main>
+</div>
+
+
+
+<%- include('partials/footer') %>

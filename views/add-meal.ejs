@@ -1,0 +1,33 @@
+<%- include('partials/header') %>
+<div class="containerr" style="background-image: url('/images/meal-back.jpg'); height: 100vh;background-size: cover;overflow: hidden;">
+  <%- include('partials/nav') %>
+  <main class="access-point">
+  <div class="log-header">
+   <h2>Create Meal meal</h2>
+  </div>
+  <div class="form-divv">
+    <form action="/save" method="post">
+        
+            
+      <input type="text" class="form-control" id="carbs" placeholder="Enter Carb-name" name="carbs" required><br>
+        
+      
+        
+        <input type="text" class="form-control" id="protein" placeholder="Enter protein name" name="protein" required><br>
+      
+      
+      
+        <input type="number" class="form-control" id="fat" placeholder="Enter Fat amount in grams" name="fat" required><br>
+  
+   
+     
+        <input type="number" class="form-control" id="sugar" placeholder="Enter sugar amount in grams" name="sugar" required><br>
+      
+ <input type="submit" value="create" id="submit">
+    </form>
+  </div>
+  </main>
+  </div>
+
+  <%- include('partials/footer') %>
+  

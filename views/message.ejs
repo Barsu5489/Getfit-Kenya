@@ -1,0 +1,39 @@
+<%- include('partials/header') %>
+<div class="join-chatting">
+<%- include('partials/nav') %>
+<div class="join-container">
+    <header class="join-header">
+        <h1> ChatRooms</h1>
+    </header>
+    <main class="join-main">
+        <form action="/chat">
+            <div class="form-control">
+                <label for="username">Username</label>
+                <input
+                    type="text"
+                    name="username"
+                    id="username"
+                    placeholder="Enter username(Random)"
+                    required
+                />
+            </div>
+            <div class="form-control">
+                <label for="room">Room Name</label>
+                <select name="room" id="room">
+                    <option value="">--Please choose the fitness room you want to join--</option>
+                    <option value="Bodybuilding">Bodybuilding</option>
+                    <option value="Cardio">Cardio</option>
+                    <option value="Nutrition">Nutrition/diet</option>
+                    <option value="Stretching">Calisthenics</option>
+                    <option value="General">General</option>
+                    
+                </select>
+            </div>
+            <button type="submit" class="btn">Join</button>
+        </form>
+    </main>
+</div>
+</div>
+
+
+<%- include('partials/footer') %>

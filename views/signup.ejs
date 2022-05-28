@@ -1,0 +1,39 @@
+<%- include('partials/header') %>
+
+
+    <main class="access" style="padding-bottom: 50px;">
+        <%- include('partials/nav') %>
+
+  <main class="access-point">
+    <div class="log-header">
+        <h2>Sign Up</h2>
+    </div>
+    <div class="form-divv">
+
+        <form action="/signup" method="post">
+            
+
+            <% if(error) { %>
+                <p style="color: red"><%= message %></p>
+            <% } %>
+
+            
+            <input type="email" name="email" id="" value="<%= user.email %>" placeholder="Enter email address" required>
+            <input type="text" name="fullname" id="" value="<%= user.fullname %>" placeholder="Enter fullname" required>
+            
+          
+            
+            <input type="password" name="password" id="" value="<%= user.password %>" placeholder="Enter passwaad" required>
+           
+            <input type="password" name="confirmPassword" id="" value="<%= user.confirmPassword %>" placeholder="Confirm paswaaad" required>
+
+           
+            <input type="submit" value="Create Account" id="submit">
+            <p style="color: white;">Already have an account? <a href="/login" style="color:red;">Log In</a></p>
+        </form>
+    </div>
+
+    </main>
+    </main>
+
+<%- include('partials/footer') %>

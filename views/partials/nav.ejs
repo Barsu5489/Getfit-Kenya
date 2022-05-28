@@ -1,0 +1,33 @@
+<header class="container">
+    <div>
+      <a id="logo" href="/">  <img style="height: 6vh; margin-right: 10px;" src="/images/icon.png" alt=""> GETFIT KENYA</a>
+    </div>
+    <% if(locals.isloggedIn){%>
+
+        <div class="dropdown">
+            <button style="background-color: transparent; margin-left: 10px; border: none;" > <i class="fa fa-user" aria-hidden="true" style="color: white; position: absolute;top: 35px;"></i> </button>
+           
+        <li id="profilee" class="nav-link">  <div class="dropdown-content" ><a href="/logout">Log Out</a> <p style="color: white;"> <%= locals.username%></p></div></li>
+    </div>
+
+      <%}%>
+   
+    <nav >
+        <ul>
+            
+            <% if(locals.isloggedIn){ %>
+                <li class="nav-link"><a href="/shop">shop</a></li>
+                <li class="nav-link"><a href="/meal">diet</a></li>
+            <li class="nav-link"><a href="/videos">videos</a></li>
+            <li class="nav-link"><a href="/message">chat-room</a></li>
+           
+                <% } else{%>
+                
+                   
+                    <li class="nav-link"><a href="/login">Log In</a></li>
+                    <li class="nav-link"><a href="/signup">Sign Up</a></li>
+                    <% } %>   
+            
+        </ul>
+    </nav>
+</header>

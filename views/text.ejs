@@ -1,0 +1,23 @@
+
+
+<%- include('partials/header') %>
+
+<%- include('partials/nav') %
+
+
+
+      <form action="/sendMessage" method="post">
+          <div class="form-group">
+              <input type="number" id="num" name="num" placeholder="phone number">
+          </div>
+          <div class="form-group">
+            <input type="message" id="mes" name="mes" placeholder="Enter message">
+        </div>
+        <input type="submit" value="submit message">
+
+        
+    
+   
+
+
+<%- include('partials/footer') %>

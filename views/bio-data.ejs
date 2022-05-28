@@ -1,0 +1,46 @@
+<%- include('partials/header') %>
+<main class="access" style="background-image: url('/images/meal-back.jpg'); height: 130vh;">
+<%- include('partials/nav') %>
+
+<div class="access-point">
+<div class="log-header">
+    <h2>Macros Calculator</h2>
+</div>
+<div class="form-divv">
+<form action="/bio" method="post">
+    <select name="gender" id="mac" required>
+    
+            <option value="">--Please choose gender--</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+
+   <input type="number" name="age" placeholder="age">  
+   <input type="number" name="height" placeholder="Enter height in cm"> 
+   <input type="number" name="weight" placeholder="Enter weight in Kgs"> 
+
+   <select name="activity" id="mac" required>
+    
+    <option value="">--Please choose activity level--</option>
+    <option value="sedentary">sedentary</option>
+    <option value="light">light</option>
+    <option value="moderate">moderate</option>
+    <option value="active">active</option>
+</select>  
+<select name="goal" id="mac" required>
+    
+    <option value="">--Please choose a goal--</option>
+    <option value="balance">balance</option>
+    <option value="mildWeightLoss">mildWeightLoss</option>
+    <option value="mildWeightGain">mildWeightGain</option>
+    <option value="heavyWeightLoss">heavyWeightLoss</option>
+    <option value="heavyWeightGain">heavyWeightGain</option>
+</select>  
+<input type="submit" value="calculate" id="sub">
+        
+</form>
+</div>
+</main>
+</div>
+
+<%- include('partials/footer') %>

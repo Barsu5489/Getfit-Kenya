@@ -1,0 +1,35 @@
+<%- include('partials/header') %>
+
+
+<div class="containerr"  style="background-image: url('/images/meal-back.jpg'); min-height:100vh;background-size:cover; ">
+  <%- include('partials/nav') %>
+  <main class="access-point">
+    <div class="log-header">
+    <h2>Edit Meal</h2>
+  </div>
+  <div class="form-divv">
+    <form action="/update" method="post">
+      <input type="hidden" value="<%= meal.id %>" name="id">
+      <div class="form-group">
+        
+        <input type="text" class="form-control" id="carbs" placeholder="Enter carb name" value="<%= meal.carbohydrate %>" name="carbs" required>
+      </div>
+      <div class="form-group">
+      
+        <input type="text" class="form-control" id="protein" placeholder="Enter protein name" value="<%= meal.protein %>" name="protein" required>
+      </div>
+      <div class="form-group">
+        
+        <input type="text" class="form-control" id="fat" placeholder="Enter fat in grams" value="<%= meal.fat %>" name="fat" required>
+      </div>
+      <div class="form-group">
+      
+        <input type="text" class="form-control" id="sugar" placeholder="Enter sugar in grams" value="<%= meal.sugar %>" name="sugar" required>
+      </div>
+      <input type="submit" value="Change" id="submit">
+    </form>
+  </div>
+  </main>
+  </div>
+
+  <%- include('partials/footer') %>
